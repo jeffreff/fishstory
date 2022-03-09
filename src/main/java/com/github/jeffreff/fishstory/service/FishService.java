@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class FishService implements CRUDServiceInterface<Fish> {
+public class FishService implements FishServiceInterface<Fish> {
 
     private FishRepo repo;
 
@@ -18,27 +18,36 @@ public class FishService implements CRUDServiceInterface<Fish> {
     }
 
     @Override
-    public Fish create(Fish fish) {
+    public Fish createFish(Fish fish) {
         return this.repo.save(fish);
     }
 
     @Override
-    public List<Fish> readAll() {
+    public List<Fish> readAllFish() {
         return this.repo.findAll();
     }
 
     @Override
-    public Optional<Fish> readById(Long id) {
+    public Optional<Fish> readFishById(Long id) {
         return Optional.empty();
     }
 
     @Override
-    public Fish update(Long id, Fish fish) {
+    public Fish updateFish(Long id, Fish fish) {
         return null;
     }
 
     @Override
-    public boolean delete(Long id) {
+    public Fish gutFish(Long id) {
+        Optional<Fish> existingFish = this.repo.findById(id);
+        Fish changedFish = existingFish.orElseThrow();
+
+            changedFish.setGutted(true);
+            return this.repo.save(changedFish);
+    }
+
+    @Override
+    public boolean deleteFish(Long id) {
         return false;
     }
 }
