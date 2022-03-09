@@ -2,7 +2,6 @@ package com.github.jeffreff.fishstory.service;
 
 import com.github.jeffreff.fishstory.domain.Fish;
 import com.github.jeffreff.fishstory.repo.FishRepo;
-
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -42,12 +41,19 @@ public class FishService implements FishServiceInterface<Fish> {
         Optional<Fish> existingFish = this.repo.findById(id);
         Fish changedFish = existingFish.orElseThrow();
 
-            changedFish.setGutted(true);
-            return this.repo.save(changedFish);
+        changedFish.setGutted(true);
+        return this.repo.save(changedFish);
     }
 
     @Override
-    public boolean deleteFish(Long id) {
+    public boolean deleteFishById(Long id) {
+        Optional<Fish> existingOptional = this.repo.findById(id);
+
+        if (existingOptional.isPresent()) {
+            Fish existingFish = existingOptional.get();
+            this.repo.deleteById(id);
+            return !(this.repo.existsById(id));
+        }
         return false;
     }
 }

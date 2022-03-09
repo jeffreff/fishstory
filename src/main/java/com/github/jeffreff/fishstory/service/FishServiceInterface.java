@@ -14,5 +14,5 @@ public interface FishServiceInterface<T> {
 
     T gutFish(Long id);
 
-    boolean deleteFish(Long id);
+    boolean deleteFishById(Long id);
 }
