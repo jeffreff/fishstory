@@ -14,6 +14,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @SpringBootTest
 public class FishControllerUnitTest {
 
@@ -32,11 +35,21 @@ public class FishControllerUnitTest {
 
     @Test
     public void createTest() {
-
         when(service.create(testFish)).thenReturn(testFish);
 
         assertThat(testFish).isEqualTo(controller.create(testFish));
 
         verify(service, times(1)).create(testFish);
+    }
+
+    @Test
+    public void getFishTest() {
+        List<Fish> testFishList = new ArrayList<>();
+
+        when(service.readAll()).thenReturn(testFishList);
+
+        assertThat(testFishList).isEqualTo(controller.getFish());
+
+        verify(service, times(1)).readAll();
     }
 }
