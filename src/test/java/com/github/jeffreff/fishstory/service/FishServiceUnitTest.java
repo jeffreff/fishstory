@@ -67,7 +67,7 @@ public class FishServiceUnitTest {
         when(repo.findById(id)).thenReturn(testOptionalFish);
         when(this.repo.save(any(Fish.class))).thenReturn(testGuttedFish);
 
-        Fish result = this.service.gutFish(1L, testFish);
+        Fish result = this.service.gutFish(1L);
 
         assertThat(result).isNotNull();
         assertThat(result).isEqualTo(testGuttedFish);

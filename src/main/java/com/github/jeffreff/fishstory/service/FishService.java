@@ -38,7 +38,7 @@ public class FishService implements FishServiceInterface<Fish> {
     }
 
     @Override
-    public Fish gutFish(Long id, Fish fish) {
+    public Fish gutFish(Long id) {
         Optional<Fish> existingFish = this.repo.findById(id);
         Fish changedFish = existingFish.orElseThrow();
 

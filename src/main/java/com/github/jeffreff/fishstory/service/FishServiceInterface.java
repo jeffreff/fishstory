@@ -12,7 +12,7 @@ public interface FishServiceInterface<T> {
 
     T updateFish(Long id, T t);
 
-    T gutFish(Long id, T t);
+    T gutFish(Long id);
 
     boolean deleteFish(Long id);
 }

@@ -52,4 +52,14 @@ public class FishControllerUnitTest {
 
         verify(service, times(1)).readAllFish();
     }
+
+    @Test
+    public void gutFishTest() {
+        Long id = 1L;
+        when(service.gutFish(id)).thenReturn(testFish);
+
+        assertThat(testFish).isEqualTo(controller.gutFish(id));
+
+        verify(service, times(1)).gutFish(id);
+    }
 }
