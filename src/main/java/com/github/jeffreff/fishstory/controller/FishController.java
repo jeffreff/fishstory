@@ -2,7 +2,6 @@ package com.github.jeffreff.fishstory.controller;
 
 import com.github.jeffreff.fishstory.domain.Fish;
 import com.github.jeffreff.fishstory.service.FishService;
-
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,5 +28,10 @@ public class FishController {
     @PutMapping("/gutFish/{id}")
     public Fish gutFish(@PathVariable Long id) {
         return this.service.gutFish(id);
+    }
+
+    @DeleteMapping("/deleteFish/{id}")
+    public Boolean deleteFishById(@PathVariable Long id) {
+        return this.service.deleteFishById(id);
     }
 }
