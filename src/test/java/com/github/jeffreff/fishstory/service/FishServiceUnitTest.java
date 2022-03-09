@@ -15,6 +15,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @SpringBootTest(webEnvironment = WebEnvironment.MOCK)
 public class FishServiceUnitTest {
 
@@ -39,5 +42,15 @@ public class FishServiceUnitTest {
         assertThat(testFish).isEqualTo(service.create(testFish));
 
         verify(repo, times(1)).save(testFish);
+    }
+
+    @Test
+    public void readAllTest() {
+        List<Fish> testFishList = new ArrayList<>();
+        when(repo.findAll()).thenReturn(testFishList);
+
+        assertThat(testFishList).isEqualTo(service.readAll());
+
+        verify(repo, times(1)).findAll();
     }
 }

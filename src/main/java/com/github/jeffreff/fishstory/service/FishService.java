@@ -24,7 +24,7 @@ public class FishService implements CRUDServiceInterface<Fish> {
 
     @Override
     public List<Fish> readAll() {
-        return null;
+        return this.repo.findAll();
     }
 
     @Override
