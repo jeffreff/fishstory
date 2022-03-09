@@ -21,11 +21,11 @@ public class FishController {
 
     @PostMapping("/createFish")
     public Fish create(@RequestBody Fish newFish) {
-        return this.service.create(newFish);
+        return this.service.createFish(newFish);
     }
 
     @GetMapping("/findFish")
     public List<Fish> getFish() {
-        return this.service.readAll();
+        return this.service.readAllFish();
     }
 }

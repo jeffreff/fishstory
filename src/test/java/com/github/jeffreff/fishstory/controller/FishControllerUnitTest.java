@@ -35,21 +35,21 @@ public class FishControllerUnitTest {
 
     @Test
     public void createTest() {
-        when(service.create(testFish)).thenReturn(testFish);
+        when(service.createFish(testFish)).thenReturn(testFish);
 
         assertThat(testFish).isEqualTo(controller.create(testFish));
 
-        verify(service, times(1)).create(testFish);
+        verify(service, times(1)).createFish(testFish);
     }
 
     @Test
     public void getFishTest() {
         List<Fish> testFishList = new ArrayList<>();
 
-        when(service.readAll()).thenReturn(testFishList);
+        when(service.readAllFish()).thenReturn(testFishList);
 
         assertThat(testFishList).isEqualTo(controller.getFish());
 
-        verify(service, times(1)).readAll();
+        verify(service, times(1)).readAllFish();
     }
 }
