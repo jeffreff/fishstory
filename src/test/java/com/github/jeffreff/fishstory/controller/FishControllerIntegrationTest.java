@@ -18,15 +18,14 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-
 @SpringBootTest(webEnvironment = WebEnvironment.MOCK)
 @AutoConfigureMockMvc
-@Sql(scripts = {"classpath:schema-test.sql", "classpath:data-test.sql"}, executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
+@Sql(scripts = { "classpath:schema-test.sql",
+        "classpath:data-test.sql" }, executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
 @ActiveProfiles(profiles = "test")
 public class FishControllerIntegrationTest {
 
     private final String url = "http://localhost:8080/";
-    private Long id = 1L;
     private Fish testFish;
 
     @Autowired
@@ -45,7 +44,7 @@ public class FishControllerIntegrationTest {
         Fish expectedFish = new Fish(2L, "Salmon", 4.5, false);
 
         MockHttpServletRequestBuilder mockRequest = MockMvcRequestBuilders.request(HttpMethod.POST,
-                        url + "createFish").contentType(MediaType.APPLICATION_JSON)
+                url + "createFish").contentType(MediaType.APPLICATION_JSON)
                 .content(jsonifier.writeValueAsString(testFish)).accept(MediaType.APPLICATION_JSON);
 
         ResultMatcher status = MockMvcResultMatchers.status().isOk();
@@ -69,13 +68,14 @@ public class FishControllerIntegrationTest {
 
     @Test
     void deleteFishByIdTest() throws Exception {
-        Fish expectedFish = new Fish(1L, "Salmon", 4.5, true);
+        String expected = "true";
 
         MockHttpServletRequestBuilder mockRequest = MockMvcRequestBuilders.request(HttpMethod.DELETE,
                 url + "deleteFish/1");
 
         ResultMatcher status = MockMvcResultMatchers.status().isOk();
+        ResultMatcher content = MockMvcResultMatchers.content().string(expected);
 
-        this.myMockMvc.perform(mockRequest).andExpect(status);
+        this.myMockMvc.perform(mockRequest).andExpect(status).andExpect(content);
     }
 }

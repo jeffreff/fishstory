@@ -50,21 +50,21 @@ Current scope:     <a href="../../index.html">all classes</a>
     100%
   </span>
   <span class="absValue">
-    (27/27)
+    (35/35)
   </span>
 </td>
 </tr>
   <tr>
-    <td class="name">Fish$HibernateProxy$ELukkKho</td>
+    <td class="name">Fish$HibernateProxy$adnujSx6</td>
   </tr>
   <tr>
-    <td class="name">Fish$HibernateProxy$LCR9QxdA</td>
+    <td class="name">Fish$HibernateProxy$l4MNvczF</td>
   </tr>
   <tr>
-    <td class="name">Fish$HibernateProxy$ohcPkaQO</td>
+    <td class="name">Fish$HibernateProxy$np3wmIJv</td>
   </tr>
   <tr>
-    <td class="name">Fish$HibernateProxy$UMtWbkWI</td>
+    <td class="name">Fish$HibernateProxy$w1B4z6bD</td>
   </tr>
 <tr>
   <td class="name"><strong>Total</strong></td>
@@ -81,7 +81,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     100%
   </span>
   <span class="absValue">
-    (27/27)
+    (35/35)
   </span>
 </td>
 </tr>
@@ -124,7 +124,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc"><i class="no-highlight">30</i>&nbsp;        isGutted = false;</b>
 <i class="no-highlight">31</i>&nbsp;    }
 <i class="no-highlight">32</i>&nbsp;
-<b class="fc"><i class="no-highlight">33</i>&nbsp;    public Fish(Long id, String type, double weight, boolean  isGutted) {</b>
+<b class="fc"><i class="no-highlight">33</i>&nbsp;    public Fish(Long id, String type, double weight, boolean isGutted) {</b>
 <b class="fc"><i class="no-highlight">34</i>&nbsp;        this.id = id;</b>
 <b class="fc"><i class="no-highlight">35</i>&nbsp;        this.type = type;</b>
 <b class="fc"><i class="no-highlight">36</i>&nbsp;        this.weight = weight;</b>
@@ -171,28 +171,30 @@ Current scope:     <a href="../../index.html">all classes</a>
 <i class="no-highlight">77</i>&nbsp;
 <i class="no-highlight">78</i>&nbsp;    @Override
 <i class="no-highlight">79</i>&nbsp;    public boolean equals(Object o) {
-<b class="fc"><i class="no-highlight">80</i>&nbsp;        if (this == o) return true;</b>
-<b class="fc"><i class="no-highlight">81</i>&nbsp;        if (o == null || getClass() != o.getClass()) return false;</b>
-<b class="fc"><i class="no-highlight">82</i>&nbsp;        Fish fish = (Fish) o;</b>
-<b class="fc"><i class="no-highlight">83</i>&nbsp;        return Double.compare(fish.weight, weight) == 0 &amp;&amp; isGutted == fish.isGutted &amp;&amp; Objects.equals(id, fish.id) &amp;&amp; Objects.equals(type, fish.type);</b>
-<i class="no-highlight">84</i>&nbsp;    }
-<i class="no-highlight">85</i>&nbsp;
-<i class="no-highlight">86</i>&nbsp;    @Override
-<i class="no-highlight">87</i>&nbsp;    public int hashCode() {
-<b class="fc"><i class="no-highlight">88</i>&nbsp;        return Objects.hash(id, type, weight, isGutted);</b>
-<i class="no-highlight">89</i>&nbsp;    }
-<i class="no-highlight">90</i>&nbsp;
-<i class="no-highlight">91</i>&nbsp;    @Override
-<i class="no-highlight">92</i>&nbsp;    public String toString() {
-<b class="fc"><i class="no-highlight">93</i>&nbsp;        return &quot;Fish{&quot; +</b>
-<i class="no-highlight">94</i>&nbsp;                &quot;id=&quot; + id +
-<i class="no-highlight">95</i>&nbsp;                &quot;, type=&#39;&quot; + type + &#39;\&#39;&#39; +
-<i class="no-highlight">96</i>&nbsp;                &quot;, weight=&quot; + weight +
-<i class="no-highlight">97</i>&nbsp;                &quot;, isGutted=&quot; + isGutted +
-<i class="no-highlight">98</i>&nbsp;                &#39;}&#39;;
-<i class="no-highlight">99</i>&nbsp;    }
-<i class="no-highlight">100</i>&nbsp;}
-<i class="no-highlight">101</i>&nbsp;
+<b class="fc"><i class="no-highlight">80</i>&nbsp;        if (this == o)</b>
+<b class="fc"><i class="no-highlight">81</i>&nbsp;            return true;</b>
+<b class="fc"><i class="no-highlight">82</i>&nbsp;        if (o == null || getClass() != o.getClass())</b>
+<b class="fc"><i class="no-highlight">83</i>&nbsp;            return false;</b>
+<b class="fc"><i class="no-highlight">84</i>&nbsp;        Fish fish = (Fish) o;</b>
+<b class="fc"><i class="no-highlight">85</i>&nbsp;        return Double.compare(fish.weight, weight) == 0 &amp;&amp; isGutted == fish.isGutted &amp;&amp; Objects.equals(id, fish.id)</b>
+<b class="fc"><i class="no-highlight">86</i>&nbsp;                &amp;&amp; Objects.equals(type, fish.type);</b>
+<i class="no-highlight">87</i>&nbsp;    }
+<i class="no-highlight">88</i>&nbsp;
+<i class="no-highlight">89</i>&nbsp;    @Override
+<i class="no-highlight">90</i>&nbsp;    public int hashCode() {
+<b class="fc"><i class="no-highlight">91</i>&nbsp;        return Objects.hash(id, type, weight, isGutted);</b>
+<i class="no-highlight">92</i>&nbsp;    }
+<i class="no-highlight">93</i>&nbsp;
+<i class="no-highlight">94</i>&nbsp;    @Override
+<i class="no-highlight">95</i>&nbsp;    public String toString() {
+<b class="fc"><i class="no-highlight">96</i>&nbsp;        return &quot;Fish{&quot; +</b>
+<b class="fc"><i class="no-highlight">97</i>&nbsp;                &quot;id=&quot; + id +</b>
+<b class="fc"><i class="no-highlight">98</i>&nbsp;                &quot;, type=&#39;&quot; + type + &#39;\&#39;&#39; +</b>
+<b class="fc"><i class="no-highlight">99</i>&nbsp;                &quot;, weight=&quot; + weight +</b>
+<b class="fc"><i class="no-highlight">100</i>&nbsp;                &quot;, isGutted=&quot; + isGutted +</b>
+<b class="fc"><i class="no-highlight">101</i>&nbsp;                &#39;}&#39;;</b>
+<i class="no-highlight">102</i>&nbsp;    }
+<i class="no-highlight">103</i>&nbsp;}
 </div>
 </pre>
 </div>
@@ -219,7 +221,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-03-10 12:14</div>
+    <div style="float:right;">generated on 2022-03-11 10:55</div>
 </div>
 </body>
 </html>
