@@ -30,7 +30,7 @@ public class Fish {
         isGutted = false;
     }
 
-    public Fish(Long id, String type, double weight, boolean  isGutted) {
+    public Fish(Long id, String type, double weight, boolean isGutted) {
         this.id = id;
         this.type = type;
         this.weight = weight;
@@ -77,10 +77,13 @@ public class Fish {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         Fish fish = (Fish) o;
-        return Double.compare(fish.weight, weight) == 0 && isGutted == fish.isGutted && Objects.equals(id, fish.id) && Objects.equals(type, fish.type);
+        return Double.compare(fish.weight, weight) == 0 && isGutted == fish.isGutted && Objects.equals(id, fish.id)
+                && Objects.equals(type, fish.type);
     }
 
     @Override
@@ -98,4 +101,3 @@ public class Fish {
                 '}';
     }
 }
-

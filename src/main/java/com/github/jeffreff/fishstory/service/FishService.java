@@ -50,7 +50,6 @@ public class FishService implements FishServiceInterface<Fish> {
         Optional<Fish> existingOptional = this.repo.findById(id);
 
         if (existingOptional.isPresent()) {
-            Fish existingFish = existingOptional.get();
             this.repo.deleteById(id);
             return !(this.repo.existsById(id));
         }
