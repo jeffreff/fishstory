@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.github.jeffreff</groupId>
     <artifactId>fishstory</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <name>fishstory</name>
     <description>Fishstory</description>
     <properties>
