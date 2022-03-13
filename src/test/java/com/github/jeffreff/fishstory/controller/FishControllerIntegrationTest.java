@@ -1,5 +1,8 @@
 package com.github.jeffreff.fishstory.controller;
 
+import java.util.List;
+import java.util.Optional;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.jeffreff.fishstory.domain.Fish;
 import org.junit.jupiter.api.BeforeEach;
@@ -41,7 +44,7 @@ public class FishControllerIntegrationTest {
 
     @Test
     void createFishTest() throws Exception {
-        Fish expectedFish = new Fish(2L, "Salmon", 4.5, false);
+        Fish expectedFish = new Fish(4L, "Salmon", 4.5, false);
 
         MockHttpServletRequestBuilder mockRequest = MockMvcRequestBuilders.request(HttpMethod.POST,
                 url + "createFish").contentType(MediaType.APPLICATION_JSON)
@@ -49,6 +52,34 @@ public class FishControllerIntegrationTest {
 
         ResultMatcher status = MockMvcResultMatchers.status().isOk();
         ResultMatcher content = MockMvcResultMatchers.content().json(jsonifier.writeValueAsString(expectedFish));
+
+        this.myMockMvc.perform(mockRequest).andExpect(status).andExpect(content);
+    }
+
+    @Test
+    void getFishTest() throws Exception {
+        List<Fish> expectedFishList = List.of(
+                new Fish(1L, "Salmon", 4.5, false),
+                new Fish(2L, "Carp", 5.5, false),
+                new Fish(3L, "Bass", 6.5, false));
+
+        MockHttpServletRequestBuilder mockRequest = MockMvcRequestBuilders.request(HttpMethod.GET, url + "readFish");
+
+        ResultMatcher status = MockMvcResultMatchers.status().isOk();
+        ResultMatcher content = MockMvcResultMatchers.content().json(jsonifier.writeValueAsString(expectedFishList));
+
+        this.myMockMvc.perform(mockRequest).andExpect(status).andExpect(content);
+    }
+
+    @Test
+    void getByIdFishTest() throws Exception {
+        Fish expectedFish = new Fish(1L, "Salmon", 4.5, false);
+
+        MockHttpServletRequestBuilder mockRequest = MockMvcRequestBuilders.request(HttpMethod.GET, url + "readFish/1");
+
+        ResultMatcher status = MockMvcResultMatchers.status().isOk();
+        ResultMatcher content = MockMvcResultMatchers.content()
+                .json(jsonifier.writeValueAsString(expectedFish));
 
         this.myMockMvc.perform(mockRequest).andExpect(status).andExpect(content);
     }

@@ -5,6 +5,7 @@ import com.github.jeffreff.fishstory.service.FishService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class FishController {
@@ -20,9 +21,14 @@ public class FishController {
         return this.service.createFish(newFish);
     }
 
-    @GetMapping("/findFish")
-    public List<Fish> getFish() {
+    @GetMapping("/readFish")
+    public List<Fish> readFish() {
         return this.service.readAllFish();
+    }
+
+    @GetMapping("readFish/{id}")
+    public Optional<Fish> readByIdFish(@PathVariable Long id) {
+        return this.service.readByIdFish(id);
     }
 
     @PutMapping("/gutFish/{id}")
