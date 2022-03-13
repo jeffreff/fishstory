@@ -1,6 +1,7 @@
 package com.github.jeffreff.fishstory.controller;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -73,6 +74,17 @@ public class FishControllerUnitTest {
         assertThat(testFish).isEqualTo(controller.gutFish(id));
 
         verify(service, times(1)).gutFish(id);
+    }
+
+    @Test
+    public void deleteAllFishTest() {
+        when(service.deleteAllFish()).thenReturn(true);
+
+        boolean actual = controller.deleteAllFish();
+
+        assertTrue(actual);
+
+        verify(service, times(1)).deleteAllFish();
     }
 
     @Test
