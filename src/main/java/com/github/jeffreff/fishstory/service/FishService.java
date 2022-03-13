@@ -46,6 +46,17 @@ public class FishService implements FishServiceInterface<Fish> {
     }
 
     @Override
+    public boolean deleteAllFish() {
+        List<Fish> existingFishList = this.repo.findAll();
+
+        if (!existingFishList.isEmpty()) {
+            this.repo.deleteAll();
+            return true;
+        }
+        return false;
+    }
+
+    @Override
     public boolean deleteByIdFish(Long id) {
         Optional<Fish> existingOptional = this.repo.findById(id);
 
