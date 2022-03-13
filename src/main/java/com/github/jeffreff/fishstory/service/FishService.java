@@ -27,8 +27,8 @@ public class FishService implements FishServiceInterface<Fish> {
     }
 
     @Override
-    public Optional<Fish> readFishById(Long id) {
-        return Optional.empty();
+    public Optional<Fish> readByIdFish(Long id) {
+        return this.repo.findById(id);
     }
 
     @Override
@@ -46,7 +46,18 @@ public class FishService implements FishServiceInterface<Fish> {
     }
 
     @Override
-    public boolean deleteFishById(Long id) {
+    public boolean deleteAllFish() {
+        List<Fish> existingFishList = this.repo.findAll();
+
+        if (!existingFishList.isEmpty()) {
+            this.repo.deleteAll();
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean deleteByIdFish(Long id) {
         Optional<Fish> existingOptional = this.repo.findById(id);
 
         if (existingOptional.isPresent()) {

@@ -5,6 +5,7 @@ import com.github.jeffreff.fishstory.service.FishService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class FishController {
@@ -16,13 +17,18 @@ public class FishController {
     }
 
     @PostMapping("/createFish")
-    public Fish create(@RequestBody Fish newFish) {
+    public Fish createFish(@RequestBody Fish newFish) {
         return this.service.createFish(newFish);
     }
 
-    @GetMapping("/findFish")
-    public List<Fish> getFish() {
+    @GetMapping("/readFish")
+    public List<Fish> readFish() {
         return this.service.readAllFish();
+    }
+
+    @GetMapping("readFish/{id}")
+    public Optional<Fish> readByIdFish(@PathVariable Long id) {
+        return this.service.readByIdFish(id);
     }
 
     @PutMapping("/gutFish/{id}")
@@ -30,8 +36,13 @@ public class FishController {
         return this.service.gutFish(id);
     }
 
+    @DeleteMapping("/deleteFish")
+    public Boolean deleteAllFish() {
+        return this.service.deleteAllFish();
+    }
+
     @DeleteMapping("/deleteFish/{id}")
-    public Boolean deleteFishById(@PathVariable Long id) {
-        return this.service.deleteFishById(id);
+    public Boolean deleteByIdFish(@PathVariable Long id) {
+        return this.service.deleteByIdFish(id);
     }
 }

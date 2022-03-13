@@ -7,17 +7,19 @@
   - [What went as planned?](#what-went-as-planned)
   - [What could be improved in future revisions?](#what-could-be-improved-in-future-revisions)
   - [Screenshots](#screenshots)
-    - [Postman requests & API screenshots](#postman-requests--api-screenshots)
-      - [findFish & API connection proof](#findfish--api-connection-proof)
-      - [findFish](#findfish)
-      - [createFish](#createfish)
-      - [gutFish](#gutfish)
+    - [Postman requests & API screenshots (Screenshot headings = URL Resource Path)](#postman-requests--api-screenshots-screenshot-headings--url-resource-path)
+      - [createFish & API connection proof](#createfish--api-connection-proof)
+      - [createFish repeated 2 more times](#createfish-repeated-2-more-times)
+      - [readFish](#readfish)
+      - [readFish/2](#readfish2)
+      - [gutFish/2](#gutfish2)
+      - [deleteFish/2](#deletefish2)
       - [deleteFish](#deletefish)
     - [Database persistence proof screenshots](#database-persistence-proof-screenshots)
       - [Database before requests](#database-before-requests)
-      - [Database after requests](#database-after-requests)
+      - [Database after three createFish requests](#database-after-three-createfish-requests)
     - [Test results & coverage report screenshots](#test-results--coverage-report-screenshots)
-      - [All tests without coverage](#all-tests-without-coverage)
+      - [All tests results](#all-tests-results)
       - [All tests coverage report (Included in documentation folder)](#all-tests-coverage-report-included-in-documentation-folder)
   - [Link to Jira Board](#link-to-jira-board)
   - [Link to GitHub repository](#link-to-github-repository)
@@ -40,35 +42,43 @@ remaining time to attempt to implement any "should" and "could" MoSCoW prioritie
 
 ## What went as planned?
 
-I fully implemented all the "must" user stories, and I believe I have made use of the Gitflow branching model successfully as well as
+I fully implemented all the "must" and "should" user stories, and I believe I have made use of the Gitflow branching model successfully, as well as
 implementing appropriate Jira smart commits. I also followed the Agile and Test Driven Development methodologies to the
 best of my ability.
 
 ## What could be improved in future revisions?
 
-Implement all remaining "should" and "could" user stories left on the Jira board for extra functionality. I had a few
+Implement all remaining "could" user stories left on the Jira board for extra functionality. I had a few
 mishaps with merging/pulling incorrectly on GitHub, I have since learnt how to fix these mistakes and plan to take these lessons I
 have learnt onwards into future endeavours.
 
 ## Screenshots
 
-### Postman requests & API screenshots
+### Postman requests & API screenshots (Screenshot headings = URL Resource Path)
 
-#### findFish & API connection proof
+#### createFish & API connection proof
 
-![findFish & API](documentation/images/findFish%20with%20API%20connection%20proof.png?raw=true)
+![findFish & API](documentation/images/createFish%20with%20API%20connection%20proof.png?raw=true)
 
-#### findFish
+#### createFish repeated 2 more times
 
-![findFish](documentation/images/findFish.png?raw=true)
+![findFish repeated 2 more times](documentation/images/createFish%20repeated%20two%20more%20times.png?raw=true)
 
-#### createFish
+#### readFish
 
-![createFish](documentation/images/createFish.png?raw=true)
+![findFish](documentation/images/readFish.png?raw=true)
 
-#### gutFish
+#### readFish/2
 
-![gutFish](documentation/images/gutFish.png?raw=true)
+![findFish/2](documentation/images/readFish{2}.png?raw=true)
+
+#### gutFish/2
+
+![gutFish/2](documentation/images/gutFish%7B2%7D.png?raw=true)
+
+#### deleteFish/2
+
+![deleteFish/2](documentation/images/deleteFish%7B2%7D.png?raw=true)
 
 #### deleteFish
 
@@ -78,17 +88,17 @@ have learnt onwards into future endeavours.
 
 #### Database before requests
 
-![Database before requests](documentation/images/database%20before%20requests.png?raw=true)
+![Database before requests](documentation/images/empty%20database.png?raw=true)
 
-#### Database after requests
+#### Database after three createFish requests
 
-![Database after requests](documentation/images/database%20after%20requests.png?raw=true)
+![Database after three createFish requests](documentation/images/database%20after%20three%20createFish.png?raw=true)
 
 ### Test results & coverage report screenshots
 
-#### All tests without coverage
+#### All tests results
 
-![All tests without coverage](documentation/images/all%20tests%20without%20coverage.png?raw=true)
+![All tests results](documentation/images/test%20results.png?raw=true)
 
 #### All tests coverage report (Included in documentation folder)
 

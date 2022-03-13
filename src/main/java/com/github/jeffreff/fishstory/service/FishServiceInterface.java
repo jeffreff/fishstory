@@ -8,11 +8,13 @@ public interface FishServiceInterface<T> {
 
     List<T> readAllFish();
 
-    Optional<T> readFishById(Long id);
+    Optional<T> readByIdFish(Long id);
 
     T updateFish(Long id, T t);
 
     T gutFish(Long id);
 
-    boolean deleteFishById(Long id);
+    boolean deleteAllFish();
+
+    boolean deleteByIdFish(Long id);
 }
