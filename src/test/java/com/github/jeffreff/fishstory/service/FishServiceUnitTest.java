@@ -53,6 +53,18 @@ public class FishServiceUnitTest {
     }
 
     @Test
+    public void readByIdFishTest() {
+        Long id = 1L;
+        Optional<Fish> testOptionalFish = Optional.ofNullable(testFish);
+
+        when(repo.findById(id)).thenReturn(testOptionalFish);
+
+        assertThat(testOptionalFish).isEqualTo(service.readByIdFish(id));
+
+        verify(repo, times(1)).findById(id);
+    }
+
+    @Test
     public void gutFishTest() {
         Long id = 1L;
         Fish testGuttedFish = new Fish(id, "Salmon", 4.5, true);
