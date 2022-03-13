@@ -33,7 +33,7 @@ public class FishServiceUnitTest {
     }
 
     @Test
-    public void createTest() {
+    public void createFishTest() {
 
         when(repo.save(testFish)).thenReturn(testFish);
 
@@ -71,23 +71,23 @@ public class FishServiceUnitTest {
     }
 
     @Test
-    public void deleteFishByIdTest() {
+    public void deleteByIdFishTest() {
         Long id = 1L;
 
         when(repo.findById(id)).thenReturn(Optional.of(testFish));
 
-        this.service.deleteFishById(id);
+        this.service.deleteByIdFish(id);
 
         verify(this.repo, times(1)).deleteById(id);
     }
 
     @Test
-    public void deleteFishByIdFalseTest() {
+    public void deleteByIdFishFalseTest() {
         Long id = 1L;
 
         when(repo.findById(id)).thenReturn(Optional.empty());
 
-        this.service.deleteFishById(id);
+        this.service.deleteByIdFish(id);
 
         verify(this.repo, times(0)).deleteById(id);
     }

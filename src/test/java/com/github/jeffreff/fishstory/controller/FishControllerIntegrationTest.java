@@ -40,7 +40,7 @@ public class FishControllerIntegrationTest {
     }
 
     @Test
-    void createTest() throws Exception {
+    void createFishTest() throws Exception {
         Fish expectedFish = new Fish(2L, "Salmon", 4.5, false);
 
         MockHttpServletRequestBuilder mockRequest = MockMvcRequestBuilders.request(HttpMethod.POST,
@@ -67,7 +67,7 @@ public class FishControllerIntegrationTest {
     }
 
     @Test
-    void deleteFishByIdTest() throws Exception {
+    void deleteByIdFishTest() throws Exception {
         String expected = "true";
 
         MockHttpServletRequestBuilder mockRequest = MockMvcRequestBuilders.request(HttpMethod.DELETE,

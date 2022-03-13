@@ -7,7 +7,7 @@
   - [What went as planned?](#what-went-as-planned)
   - [What could be improved in future revisions?](#what-could-be-improved-in-future-revisions)
   - [Screenshots](#screenshots)
-    - [Postman requests & API screenshots](#postman-requests--api-screenshots)
+    - [Postman requests & API screenshots (Screenshot headings = URL Resource Path)](#postman-requests--api-screenshots-screenshot-headings--url-resource-path)
       - [findFish & API connection proof](#findfish--api-connection-proof)
       - [findFish](#findfish)
       - [createFish](#createfish)
@@ -52,7 +52,7 @@ have learnt onwards into future endeavours.
 
 ## Screenshots
 
-### Postman requests & API screenshots
+### Postman requests & API screenshots (Screenshot headings = URL Resource Path)
 
 #### findFish & API connection proof
 

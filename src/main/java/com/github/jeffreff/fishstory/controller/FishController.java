@@ -16,7 +16,7 @@ public class FishController {
     }
 
     @PostMapping("/createFish")
-    public Fish create(@RequestBody Fish newFish) {
+    public Fish createFish(@RequestBody Fish newFish) {
         return this.service.createFish(newFish);
     }
 
@@ -31,7 +31,7 @@ public class FishController {
     }
 
     @DeleteMapping("/deleteFish/{id}")
-    public Boolean deleteFishById(@PathVariable Long id) {
-        return this.service.deleteFishById(id);
+    public Boolean deleteByIdFish(@PathVariable Long id) {
+        return this.service.deleteByIdFish(id);
     }
 }

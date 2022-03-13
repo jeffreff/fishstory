@@ -31,10 +31,10 @@ public class FishControllerUnitTest {
     }
 
     @Test
-    public void createTest() {
+    public void createFishTest() {
         when(service.createFish(testFish)).thenReturn(testFish);
 
-        assertThat(testFish).isEqualTo(controller.create(testFish));
+        assertThat(testFish).isEqualTo(controller.createFish(testFish));
 
         verify(service, times(1)).createFish(testFish);
     }
@@ -62,15 +62,15 @@ public class FishControllerUnitTest {
     }
 
     @Test
-    public void deleteFishByIdTest() {
+    public void deleteByIdFishTest() {
         Long id = 1L;
 
-        when(service.deleteFishById(id)).thenReturn(true);
+        when(service.deleteByIdFish(id)).thenReturn(true);
 
-        boolean actual = this.controller.deleteFishById(id);
+        boolean actual = this.controller.deleteByIdFish(id);
 
         assertThat(actual).isTrue();
 
-        verify(service, times(1)).deleteFishById(id);
+        verify(service, times(1)).deleteByIdFish(id);
     }
 }
