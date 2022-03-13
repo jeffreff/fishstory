@@ -36,6 +36,11 @@ public class FishController {
         return this.service.gutFish(id);
     }
 
+    @DeleteMapping("/deleteFish")
+    public Boolean deleteAllFish() {
+        return this.service.deleteAllFish();
+    }
+
     @DeleteMapping("/deleteFish/{id}")
     public Boolean deleteByIdFish(@PathVariable Long id) {
         return this.service.deleteByIdFish(id);

@@ -1,10 +1,10 @@
 package com.github.jeffreff.fishstory.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.jeffreff.fishstory.domain.Fish;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -93,6 +93,19 @@ public class FishControllerIntegrationTest {
 
         ResultMatcher status = MockMvcResultMatchers.status().isOk();
         ResultMatcher content = MockMvcResultMatchers.content().json(jsonifier.writeValueAsString(expectedFish));
+
+        this.myMockMvc.perform(mockRequest).andExpect(status).andExpect(content);
+    }
+
+    @Test
+    void deleteAllFishTest() throws Exception {
+        String expected = "true";
+
+        MockHttpServletRequestBuilder mockRequest = MockMvcRequestBuilders.request(HttpMethod.DELETE,
+                url + "deleteFish");
+
+        ResultMatcher status = MockMvcResultMatchers.status().isOk();
+        ResultMatcher content = MockMvcResultMatchers.content().string(expected);
 
         this.myMockMvc.perform(mockRequest).andExpect(status).andExpect(content);
     }
