@@ -1,29 +1,32 @@
 # Fishstory
 
 - [Fishstory](#fishstory)
-    - [What is the project?](#what-is-the-project)
-    - [Why am I doing this?](#why-am-i-doing-this)
-    - [How did I expect the project to go?](#how-did-i-expect-the-project-to-go)
-    - [What went as planned?](#what-went-as-planned)
-    - [What could be improved in future revisions?](#what-could-be-improved-in-future-revisions)
-    - [Screenshots](#screenshots)
-        - [Postman requests & API screenshots (Screenshot headings = URL Resource Path)](#postman-requests--api-screenshots-screenshot-headings--url-resource-path)
-            - [createFish & API connection proof](#createfish--api-connection-proof)
-            - [createFish repeated 2 more times](#createfish-repeated-2-more-times)
-            - [readFish](#readfish)
-            - [readFish/2](#readfish2)
-            - [gutFish/2](#gutfish2)
-            - [deleteFish/2](#deletefish2)
-            - [deleteFish](#deletefish)
-        - [Database persistence proof screenshots](#database-persistence-proof-screenshots)
-            - [Database before requests](#database-before-requests)
-            - [Database after three createFish requests](#database-after-three-createfish-requests)
-        - [Test results & coverage report screenshots](#test-results--coverage-report-screenshots)
-            - [All tests results](#all-tests-results)
-            - [All tests coverage report (Included in documentation folder)](#all-tests-coverage-report-included-in-documentation-folder)
-    - [Link to Jira Board](#link-to-jira-board)
-    - [Link to GitHub repository](#link-to-github-repository)
-    - [Notes](#notes)
+  - [What is the project?](#what-is-the-project)
+  - [Why am I doing this?](#why-am-i-doing-this)
+  - [How did I expect the project to go?](#how-did-i-expect-the-project-to-go)
+  - [What went as planned?](#what-went-as-planned)
+  - [What could be improved in future revisions?](#what-could-be-improved-in-future-revisions)
+  - [Screenshots](#screenshots)
+    - [Postman requests & API screenshots (Screenshot headings = URL Resource Path)](#postman-requests--api-screenshots-screenshot-headings--url-resource-path)
+      - [createFish & API connection proof](#createfish--api-connection-proof)
+      - [createFish repeated 2 more times](#createfish-repeated-2-more-times)
+      - [readFish](#readfish)
+      - [readFish/2](#readfish2)
+      - [gutFish/2](#gutfish2)
+      - [deleteFish/2](#deletefish2)
+      - [deleteFish](#deletefish)
+    - [Database persistence proof screenshots](#database-persistence-proof-screenshots)
+      - [Database before requests](#database-before-requests)
+      - [Database after three createFish requests](#database-after-three-createfish-requests)
+    - [Test results & coverage report screenshots](#test-results--coverage-report-screenshots)
+      - [All tests results](#all-tests-results)
+      - [All tests coverage report (Included in documentation folder)](#all-tests-coverage-report-included-in-documentation-folder)
+  - [Link to Jira Board](#link-to-jira-board)
+  - [Link to GitHub repository](#link-to-github-repository)
+  - [Installation](#installation)
+    - [Needed software/dependencies](#needed-softwaredependencies)
+    - [How to install/use](#how-to-installuse)
+  - [Notes](#notes)
 
 ## What is the project?
 
@@ -34,7 +37,7 @@ within a MySQL database.
 ## Why am I doing this?
 
 To entertain the user for a brief amount of time for scenarios such as waiting on public transport and to demonstrate my
-current knowledge in software development using Java Spring Boot.
+current knowledge in software development using: Java Spring Boot, MySQL, Jira Scrum Boards and GitHub.
 
 ## How did I expect the project to go?
 
@@ -45,13 +48,13 @@ remaining time to attempt to implement any "should" and "could" MoSCoW prioritie
 
 I fully implemented all the "must" and "should" user stories, and I believe I have made use of the Gitflow branching
 model successfully, as well as implementing appropriate Jira smart commits. I also followed the Agile and Test Driven
-Development methodologies to the best of my ability. I have a high test coverage percentage as well.
+Development methodologies to the best of my ability and have a high test coverage percentage (>90% at the time of this readme).
 
 ## What could be improved in future revisions?
 
-Implement all remaining "could" user stories left on the Jira board for extra functionality. I had a few mishaps with
-merging/pulling incorrectly on GitHub, I have since learnt how to fix these mistakes and plan to take these lessons I
-have learnt onwards into future endeavours.
+Implement all remaining "could" user stories left on the Jira board for extra functionality. In order to do so I would need to
+look into Spring Security in order to have logins for the admins and users. I had a few mishaps with merging/pulling incorrectly
+on GitHub, I have since learnt how to fix these mistakes and plan to take these lessons I have learnt onwards into future endeavours.
 
 ## Screenshots
 
@@ -117,9 +120,9 @@ have learnt onwards into future endeavours.
 
 ### Needed software/dependencies
 
-- [Postman](https://www.postman.com/downloads/)
 - Java IDE capable of running spring boot maven projects
   i.e. [IntelliJ IDEA](https://www.jetbrains.com/idea/download/#section=windows)
+- [Postman](https://www.postman.com/downloads/)
 - [MySQL + Workbench](https://www.mysql.com/downloads/)
 
 ### How to install/use
@@ -130,9 +133,9 @@ have learnt onwards into future endeavours.
 4. Run MySQL workbench and login to your local database.
 5. Open the provided .sql file in the documentation/mysql-setup folder into workbench and run the entire script. Your
    database table should now be setup appropriately with a default fish added.
-6. Run Postman
+6. Run Postman.
 7. Run your generated "fishstory-1.1-spring-boot.jar" or similar found in the root or target folders.
-8. Make calls using postman like documented above.
+8. Make calls using postman as documented above.
 
 ## Notes
 
