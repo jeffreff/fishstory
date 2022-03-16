@@ -23,17 +23,21 @@
       - [All tests coverage report (Included in documentation folder)](#all-tests-coverage-report-included-in-documentation-folder)
   - [Link to Jira Board](#link-to-jira-board)
   - [Link to GitHub repository](#link-to-github-repository)
+  - [Installation](#installation)
+    - [Needed software/dependencies](#needed-softwaredependencies)
+    - [How to install/use](#how-to-installuse)
   - [Notes](#notes)
 
 ## What is the project?
 
 I aim to create the backend (business layer) and database (data layer) of a fishing app/mini-game. The user will be able
-to throw a fishing pole and catch a fish. The backend will be created via Java Spring Boot. Caught fish will persist within a MySQL database.
+to throw a fishing pole and catch a fish. The backend will be created via Java Spring Boot. Caught fish will persist
+within a MySQL database.
 
 ## Why am I doing this?
 
 To entertain the user for a brief amount of time for scenarios such as waiting on public transport and to demonstrate my
-current knowledge in software development using Java Spring Boot.
+current knowledge in software development using: Java Spring Boot, MySQL, Jira Scrum Boards and GitHub.
 
 ## How did I expect the project to go?
 
@@ -42,15 +46,15 @@ remaining time to attempt to implement any "should" and "could" MoSCoW prioritie
 
 ## What went as planned?
 
-I fully implemented all the "must" and "should" user stories, and I believe I have made use of the Gitflow branching model successfully, as well as
-implementing appropriate Jira smart commits. I also followed the Agile and Test Driven Development methodologies to the
-best of my ability.
+I fully implemented all the "must" and "should" user stories, and I believe I have made use of the Gitflow branching
+model successfully, as well as implementing appropriate Jira smart commits. I also followed the Agile and Test Driven
+Development methodologies to the best of my ability and have a high test coverage percentage (>90% at the time of this readme).
 
 ## What could be improved in future revisions?
 
-Implement all remaining "could" user stories left on the Jira board for extra functionality. I had a few
-mishaps with merging/pulling incorrectly on GitHub, I have since learnt how to fix these mistakes and plan to take these lessons I
-have learnt onwards into future endeavours.
+Implement all remaining "could" user stories left on the Jira board for extra functionality. In order to do so I would need to
+look into Spring Security in order to have logins for the admins and users. I had a few mishaps with merging/pulling incorrectly
+on GitHub, I have since learnt how to fix these mistakes and plan to take these lessons I have learnt onwards into future endeavours.
 
 ## Screenshots
 
@@ -112,6 +116,27 @@ have learnt onwards into future endeavours.
 
 [GitHub repository](https://github.com/jeffreff/fishstory)
 
+## Installation
+
+### Needed software/dependencies
+
+- Java IDE capable of running spring boot maven projects
+  i.e. [IntelliJ IDEA](https://www.jetbrains.com/idea/download/#section=windows)
+- [Postman](https://www.postman.com/downloads/)
+- [MySQL + Workbench](https://www.mysql.com/downloads/)
+
+### How to install/use
+
+1. Clone the main branch to your local machine.
+2. Open it in your IDE.
+3. Perform a maven clean and then a maven package.
+4. Run MySQL workbench and login to your local database.
+5. Open the provided .sql file in the documentation/mysql-setup folder into workbench and run the entire script. Your
+   database table should now be setup appropriately with a default fish added.
+6. Run Postman.
+7. Run your generated "fishstory-1.1-spring-boot.jar" or similar found in the root or target folders.
+8. Make calls using postman as documented above.
+
 ## Notes
 
 - MoSCoW expressed in Jira user stories as "Priority" within details panel as well as a tag in epics.
@@ -122,7 +147,7 @@ have learnt onwards into future endeavours.
 - Planned possible development sub-branch types: release, feature, bug, qa.
 - I have been unable to fully implement smart commit comments in Jira, as my Atlassian email is different to the GitHub
   email (they must be the same). However, I have followed the "\<Issue> \#comment \<text>" structure in my commit
-  comments as best practice. The pushed commits still appear in the details panel however.
+  comments as best practice. The pushed commits still appear in the details panel, however.
 - I used a scale of 1-100 for story point estimates.
 - MoSCoW is used to split Jira epics into four categories: Must, Should, Could and Won't.
 - Test Driven Development was implemented as much as possible during development and testing is not explicitly mentioned
