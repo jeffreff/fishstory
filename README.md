@@ -45,7 +45,7 @@ remaining time to attempt to implement any "should" and "could" MoSCoW prioritie
 
 I fully implemented all the "must" and "should" user stories, and I believe I have made use of the Gitflow branching
 model successfully, as well as implementing appropriate Jira smart commits. I also followed the Agile and Test Driven
-Development methodologies to the best of my ability.
+Development methodologies to the best of my ability. I have a high test coverage percentage as well.
 
 ## What could be improved in future revisions?
 
