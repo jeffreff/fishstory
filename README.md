@@ -1,34 +1,35 @@
 # Fishstory
 
 - [Fishstory](#fishstory)
-  - [What is the project?](#what-is-the-project)
-  - [Why am I doing this?](#why-am-i-doing-this)
-  - [How did I expect the project to go?](#how-did-i-expect-the-project-to-go)
-  - [What went as planned?](#what-went-as-planned)
-  - [What could be improved in future revisions?](#what-could-be-improved-in-future-revisions)
-  - [Screenshots](#screenshots)
-    - [Postman requests & API screenshots (Screenshot headings = URL Resource Path)](#postman-requests--api-screenshots-screenshot-headings--url-resource-path)
-      - [createFish & API connection proof](#createfish--api-connection-proof)
-      - [createFish repeated 2 more times](#createfish-repeated-2-more-times)
-      - [readFish](#readfish)
-      - [readFish/2](#readfish2)
-      - [gutFish/2](#gutfish2)
-      - [deleteFish/2](#deletefish2)
-      - [deleteFish](#deletefish)
-    - [Database persistence proof screenshots](#database-persistence-proof-screenshots)
-      - [Database before requests](#database-before-requests)
-      - [Database after three createFish requests](#database-after-three-createfish-requests)
-    - [Test results & coverage report screenshots](#test-results--coverage-report-screenshots)
-      - [All tests results](#all-tests-results)
-      - [All tests coverage report (Included in documentation folder)](#all-tests-coverage-report-included-in-documentation-folder)
-  - [Link to Jira Board](#link-to-jira-board)
-  - [Link to GitHub repository](#link-to-github-repository)
-  - [Notes](#notes)
+    - [What is the project?](#what-is-the-project)
+    - [Why am I doing this?](#why-am-i-doing-this)
+    - [How did I expect the project to go?](#how-did-i-expect-the-project-to-go)
+    - [What went as planned?](#what-went-as-planned)
+    - [What could be improved in future revisions?](#what-could-be-improved-in-future-revisions)
+    - [Screenshots](#screenshots)
+        - [Postman requests & API screenshots (Screenshot headings = URL Resource Path)](#postman-requests--api-screenshots-screenshot-headings--url-resource-path)
+            - [createFish & API connection proof](#createfish--api-connection-proof)
+            - [createFish repeated 2 more times](#createfish-repeated-2-more-times)
+            - [readFish](#readfish)
+            - [readFish/2](#readfish2)
+            - [gutFish/2](#gutfish2)
+            - [deleteFish/2](#deletefish2)
+            - [deleteFish](#deletefish)
+        - [Database persistence proof screenshots](#database-persistence-proof-screenshots)
+            - [Database before requests](#database-before-requests)
+            - [Database after three createFish requests](#database-after-three-createfish-requests)
+        - [Test results & coverage report screenshots](#test-results--coverage-report-screenshots)
+            - [All tests results](#all-tests-results)
+            - [All tests coverage report (Included in documentation folder)](#all-tests-coverage-report-included-in-documentation-folder)
+    - [Link to Jira Board](#link-to-jira-board)
+    - [Link to GitHub repository](#link-to-github-repository)
+    - [Notes](#notes)
 
 ## What is the project?
 
 I aim to create the backend (business layer) and database (data layer) of a fishing app/mini-game. The user will be able
-to throw a fishing pole and catch a fish. The backend will be created via Java Spring Boot. Caught fish will persist within a MySQL database.
+to throw a fishing pole and catch a fish. The backend will be created via Java Spring Boot. Caught fish will persist
+within a MySQL database.
 
 ## Why am I doing this?
 
@@ -42,14 +43,14 @@ remaining time to attempt to implement any "should" and "could" MoSCoW prioritie
 
 ## What went as planned?
 
-I fully implemented all the "must" and "should" user stories, and I believe I have made use of the Gitflow branching model successfully, as well as
-implementing appropriate Jira smart commits. I also followed the Agile and Test Driven Development methodologies to the
-best of my ability.
+I fully implemented all the "must" and "should" user stories, and I believe I have made use of the Gitflow branching
+model successfully, as well as implementing appropriate Jira smart commits. I also followed the Agile and Test Driven
+Development methodologies to the best of my ability.
 
 ## What could be improved in future revisions?
 
-Implement all remaining "could" user stories left on the Jira board for extra functionality. I had a few
-mishaps with merging/pulling incorrectly on GitHub, I have since learnt how to fix these mistakes and plan to take these lessons I
+Implement all remaining "could" user stories left on the Jira board for extra functionality. I had a few mishaps with
+merging/pulling incorrectly on GitHub, I have since learnt how to fix these mistakes and plan to take these lessons I
 have learnt onwards into future endeavours.
 
 ## Screenshots
@@ -112,6 +113,27 @@ have learnt onwards into future endeavours.
 
 [GitHub repository](https://github.com/jeffreff/fishstory)
 
+## Installation
+
+### Needed software/dependencies
+
+- [Postman](https://www.postman.com/downloads/)
+- Java IDE capable of running spring boot maven projects
+  i.e. [IntelliJ IDEA](https://www.jetbrains.com/idea/download/#section=windows)
+- [MySQL + Workbench](https://www.mysql.com/downloads/)
+
+### How to install/use
+
+1. Clone the main branch to your local machine.
+2. Open it in your IDE.
+3. Perform a maven clean and then a maven package.
+4. Run MySQL workbench and login to your local database.
+5. Open the provided .sql file in the documentation/mysql-setup folder into workbench and run the entire script. Your
+   database table should now be setup appropriately with a default fish added.
+6. Run Postman
+7. Run your generated "fishstory-1.1-spring-boot.jar" or similar found in the root or target folders.
+8. Make calls using postman like documented above.
+
 ## Notes
 
 - MoSCoW expressed in Jira user stories as "Priority" within details panel as well as a tag in epics.
@@ -122,7 +144,7 @@ have learnt onwards into future endeavours.
 - Planned possible development sub-branch types: release, feature, bug, qa.
 - I have been unable to fully implement smart commit comments in Jira, as my Atlassian email is different to the GitHub
   email (they must be the same). However, I have followed the "\<Issue> \#comment \<text>" structure in my commit
-  comments as best practice. The pushed commits still appear in the details panel however.
+  comments as best practice. The pushed commits still appear in the details panel, however.
 - I used a scale of 1-100 for story point estimates.
 - MoSCoW is used to split Jira epics into four categories: Must, Should, Could and Won't.
 - Test Driven Development was implemented as much as possible during development and testing is not explicitly mentioned
